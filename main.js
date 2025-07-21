@@ -16,7 +16,7 @@ const view = {
     return `<div data-index="${index}" class="card back"></div>`
   },
   getCardContent(index) {
-    const number = this.transformNuMber((index % 13) + 1)
+    const number = this.transformNumber((index % 13) + 1)
     const symbol = Symbols[Math.floor(index / 13)]
     return `
       <p>${number}</p>
@@ -24,7 +24,7 @@ const view = {
       <p>${number}</p>
       `
   },
-  transformNuMber (number) {
+  transformNumber (number) {
     switch (number) {
       case 1:
         return 'A'
@@ -69,8 +69,13 @@ const view = {
   appendWrongAnimation(...cards) {
     cards.map(card => {
       card.classList.add('wrong')
-      card.addEventListener('animationend', event =>
-      event.target.classList.remove('wrong'), { once: true})
+      card.addEventListener(
+        'animationend',
+        event => {
+          event.target.classList.remove('wrong')
+        },
+        { once: true }
+      )
     })
   },
   showGameFinished () {
