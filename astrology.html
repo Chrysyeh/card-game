@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>星座組合產生器</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+    .input-group {
+      margin-bottom: 10px;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+    }
+    button {
+      padding: 5px 10px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="input-group">
+    <label>太陽星座:
+      <select id="sun-select"></select>
+    </label>
+  </div>
+  <div class="input-group">
+    <label>月亮星座:
+      <select id="moon-select"></select>
+    </label>
+  </div>
+  <div class="input-group">
+    <label>上升星座:
+      <select id="rising-select"></select>
+    </label>
+  </div>
+  <button id="generate">產生</button>
+  <div class="result" id="result"></div>
+
+  <script src="astro.js"></script>
+</body>
+</html>
